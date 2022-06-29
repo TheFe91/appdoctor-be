@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Patientlist} from './patientlist.model';
 
 @model({
   settings: {idInjection: false, mysql: {schema: 'techlabproject', table: 'Patients'}}
@@ -41,6 +42,8 @@ export class Patients extends Entity {
   })
   password?: string;
 
+  @hasMany(() => Patientlist, {keyTo: 'Patient'})
+  patientlists: Patientlist[];
   // Define well-known properties here
 
   // Indexer property to allow additional data

@@ -22,6 +22,10 @@ export class Patientlist extends Entity {
   })
   staff: string;
 
+  @property({
+    type: 'string',
+  })
+  Patient?: string;
   // Define well-known properties here
 
   // Indexer property to allow additional data
