@@ -103,6 +103,14 @@ export class Sessions extends Entity {
   })
   trunkCShelfL3?: string;
 
+  @property({
+    type: 'number',
+    precision: 10,
+    scale: 0,
+    mysql: {columnName: 'ok', dataType: 'int', dataLength: null, dataPrecision: 10, dataScale: 0, nullable: 'Y'},
+  })
+  ok?: number;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
